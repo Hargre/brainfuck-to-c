@@ -7,7 +7,7 @@ funcmap = {
     '+': lambda out_file: out_file.write('array[ptr]++;\n'),
     '-': lambda out_file: out_file.write('array[ptr]--;\n'),
     '.': lambda out_file: out_file.write('putchar(array[ptr]);\n'),
-    ',': lambda out_file: out_file.write('getchar(array[ptr]);\n'),
+    ',': lambda out_file: out_file.write('array[ptr] = getc(stdin);\ngetc(stdin);\n'),
     '[': lambda out_file: out_file.write('while (array[ptr]) {\n\t'),
     ']': lambda out_file: out_file.write('}'),
 }
